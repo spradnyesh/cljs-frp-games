@@ -13947,6 +13947,7 @@ game_of_life.dead = "#eee";
 game_of_life.alive = "#555";
 game_of_life.cell_size = 10;
 game_of_life.margin = 4;
+game_of_life.update_time = 1E3;
 game_of_life.draw_cell = function(a, b, c) {
   var d = game_of_life.canvas.getContext("2d");
   a *= game_of_life.cell_size + game_of_life.margin;
@@ -13966,5 +13967,5 @@ game_of_life.draw_board = function(a) {
   }, cljs.core.range.call(null, b)));
   return setTimeout(function() {
     return game_of_life.update_board.call(null, a);
-  }, 100);
+  }, game_of_life.update_time);
 };

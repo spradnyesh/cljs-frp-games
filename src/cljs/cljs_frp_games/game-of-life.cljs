@@ -48,6 +48,7 @@
 (def alive "#555")
 (def cell-size 10) ; (in px)
 (def margin 4) ; space b/n cells (in px)
+(def update-time 1000)
 
 (defn draw-cell [x y color]
   (let [context (.getContext canvas "2d")
@@ -66,4 +67,4 @@
                               (range size))))
                 (range size)))
     (js/setTimeout (fn [] (update-board board))
-                   100)))
+                   update-time)))
