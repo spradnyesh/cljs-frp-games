@@ -1,4 +1,4 @@
-(ns game-of-life)
+(ns cljs-frp-games.game-of-life)
 
 (enable-console-print!)
 
@@ -19,7 +19,7 @@
 
 (defn get-neighbor-weight [b x y l]
   (reduce + [(w b (dec x) (dec y) l) (w b x (dec y) l) (w b (inc x) (dec y) l)
-             (w b (dec x) y l) (w b (inc x) y l)
+             (w b (dec x) y l)                         (w b (inc x) y l)
              (w b (dec x) (inc y) l) (w b x (inc y) l) (w b (inc x) (inc y) l)]))
 
 ;; rules at http://en.wikipedia.org/wiki/Conway's_Game_of_Life#Rules
